@@ -62,7 +62,7 @@
             </h2>
             <div class="col-6 d-flex justify-content-end align-items-center">
                 <form action="" class="tm-text-primary">
-                    Página <input type="text" value="2" size="1" class="tm-input-paging tm-text-primary"> de 4
+                    Página <input type="number" id="paginaInput" value="2" min="1" max="4" size="1" class="tm-input-paging tm-text-primary">de 4
                 </form>
             </div>
         </div>
@@ -325,13 +325,33 @@
             </div>
         </div>
     </footer>
-    
+   
     <script src="js/plugins.js"></script>
     <script>
         $(window).on("load", function() {
             $('body').addClass('loaded');
         });
     </script>
+<script>
+document.getElementById("paginaInput").addEventListener("change", function() {
+    
+    let pagina = parseInt(this.value);
+
+    if (pagina === 1) {
+        window.location.href = "index.html";
+    } 
+    else if (pagina === 2) {
+        window.location.href = "pagina2.html";
+    } 
+    else if (pagina === 3) {
+        window.location.href = "pagina3.html";
+    } 
+    else if (pagina === 4) {
+        window.location.href = "pagina4.html";
+    }
+
+});
+</script>
 </body>
 
 </html>
